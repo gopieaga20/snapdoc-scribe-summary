@@ -21,8 +21,8 @@ const VoiceTranscriber = ({ onUpdateTranscription }: VoiceTranscriberProps) => {
   // Initialize speech recognition when component mounts
   useEffect(() => {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      const recognitionInstance = new SpeechRecognition();
+      const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognitionInstance = new SpeechRecognitionAPI();
       
       recognitionInstance.continuous = true;
       recognitionInstance.interimResults = true;
